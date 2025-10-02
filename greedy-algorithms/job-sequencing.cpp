@@ -16,16 +16,28 @@ bool compareJobs(const Job& a, const Job& b) {
 
 // Function to find the maximum profit job sequence
 void jobSequencing(std::vector<Job>& jobs) {
+      if (jobs.empty()) {
+        std::cout << "No jobs to schedule.\n";
+      return;
+   }
     // 1. Sort jobs in descending order of profit
     std::sort(jobs.begin(), jobs.end(), compareJobs);
 
     int n = jobs.size();
     int maxDeadline = 0;
     for (const auto& job : jobs) {
+        if (job.deadline <= 0) {
+          continue; // Skip jobs with invalid deadlines
+      }
         if (job.deadline > maxDeadline) {
             maxDeadline = job.deadline;
         }
     }
+
+     if (maxDeadline == 0) {
+     std::cout << "No valid jobs to schedule.\n";
+     return;
+ }
 
     // Array to keep track of free time slots
     std::vector<char> result(maxDeadline, ' ');

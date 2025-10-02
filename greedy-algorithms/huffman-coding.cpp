@@ -2,32 +2,35 @@
 #include <vector>
 #include <queue>
 #include <string>
+#include <memory> // Required for smart pointers
 
-// A node in the Huffman Tree
+// A node in the Huffman Tree, now using smart pointers
 struct MinHeapNode {
     char data;
     unsigned freq;
-    MinHeapNode *left, *right;
+    // Use std::shared_ptr for automatic memory management
+    std::shared_ptr<MinHeapNode> left, right;
 
-    MinHeapNode(char data, unsigned freq) {
-        left = right = nullptr;
-        this->data = data;
-        this->freq = freq;
-    }
+    MinHeapNode(char data, unsigned freq)
+        : data(data), freq(freq), left(nullptr), right(nullptr) {}
 };
 
 // Comparison structure for the priority queue (min-heap)
+// It now compares shared_ptr<MinHeapNode>
 struct compare {
-    bool operator()(MinHeapNode* l, MinHeapNode* r) {
+    bool operator()(const std::shared_ptr<MinHeapNode>& l, const std::shared_ptr<MinHeapNode>& r) const {
         return (l->freq > r->freq);
     }
 };
 
 // Function to print Huffman codes from the tree
-void printCodes(struct MinHeapNode* root, std::string str) {
-    if (!root) return;
+void printCodes(const std::shared_ptr<MinHeapNode>& root, std::string str) {
+    if (!root) {
+        return;
+    }
 
-    if (root->data != '$') { // '$' is a special value for internal nodes
+    // A '$' is used as a special value for internal nodes
+    if (root->data != '$') {
         std::cout << root->data << ": " << str << "\n";
     }
 
@@ -36,39 +39,62 @@ void printCodes(struct MinHeapNode* root, std::string str) {
 }
 
 // Main function to build and print Huffman Codes
-void huffmanCoding(std::vector<char>& data, std::vector<int>& freq) {
-    MinHeapNode *left, *right, *top;
-
-    // Create a min-heap and inserts all characters
-    std::priority_queue<MinHeapNode*, std::vector<MinHeapNode*>, compare> minHeap;
-    for (size_t i = 0; i < data.size(); ++i) {
-        minHeap.push(new MinHeapNode(data[i], freq[i]));
+void huffmanCoding(const std::vector<char>& data, const std::vector<int>& freq) {
+    // --- 1. Input Validation ---
+    if (data.empty() || data.size() != freq.size()) {
+        std::cerr << "Error: Input vectors are empty or have mismatched sizes.\n";
+        return;
     }
 
-    // Iterate while size of heap is not 1
+    // --- 2. Build the Min-Heap ---
+    // The priority queue now stores shared pointers to nodes
+    std::priority_queue<std::shared_ptr<MinHeapNode>, std::vector<std::shared_ptr<MinHeapNode>>, compare> minHeap;
+
+    for (size_t i = 0; i < data.size(); ++i) {
+        // Use std::make_shared instead of `new`
+        minHeap.push(std::make_shared<MinHeapNode>(data[i], freq[i]));
+    }
+
+    // --- 3. Build the Huffman Tree ---
     while (minHeap.size() != 1) {
         // Extract the two minimum frequency items
-        left = minHeap.top();
+        auto left = minHeap.top();
         minHeap.pop();
-        right = minHeap.top();
+        auto right = minHeap.top();
         minHeap.pop();
 
-        // Create a new internal node with frequency equal to the sum of the two nodes' frequencies
-        top = new MinHeapNode('$', left->freq + right->freq);
+        // Create a new internal node.
+        // Its frequency is the sum of the two nodes' frequencies.
+        auto top = std::make_shared<MinHeapNode>('$', left->freq + right->freq);
         top->left = left;
         top->right = right;
         minHeap.push(top);
     }
 
-    // Print the Huffman codes using the generated tree
-    printCodes(minHeap.top(), "");
+    // --- 4. Print Codes and Cleanup ---
+    // The root of the tree is the last remaining node
+    auto root = minHeap.top();
+    printCodes(root, "");
+
+    // No manual cleanup needed!
+    // Smart pointers automatically deallocate memory when they go out of scope.
 }
 
 int main() {
-    std::vector<char> data = {'a', 'b', 'c', 'd', 'e', 'f'};
-    std::vector<int> freq = {5, 9, 12, 13, 16, 45};
-    
-    huffmanCoding(data, freq);
-    
+    std::cout << "--- Test Case 1: Valid Input ---\n";
+    std::vector<char> data1 = {'a', 'b', 'c', 'd', 'e', 'f'};
+    std::vector<int> freq1 = {5, 9, 12, 13, 16, 45};
+    huffmanCoding(data1, freq1);
+
+    std::cout << "\n--- Test Case 2: Empty Input ---\n";
+    std::vector<char> data2 = {};
+    std::vector<int> freq2 = {};
+    huffmanCoding(data2, freq2);
+
+    std::cout << "\n--- Test Case 3: Mismatched Input ---\n";
+    std::vector<char> data3 = {'x', 'y'};
+    std::vector<int> freq3 = {10};
+    huffmanCoding(data3, freq3);
+
     return 0;
 }

@@ -17,8 +17,19 @@ bool compareItems(const Item& a, const Item& b) {
 
 // Function to solve the Fractional Knapsack problem
 double fractionalKnapsack(int capacity, std::vector<Item>& items) {
+      if (capacity <= 0) {
+      return 0.0;
+   }
+  
+  if (items.empty()) {
+       return 0.0;
+  }
     // 1. Calculate the value-to-weight ratio for each item
     for (auto& item : items) {
+          if (item.weight <= 0) {
+           item.ratio = 0.0; // Skip items with invalid weight
+          continue;
+      }
         item.ratio = static_cast<double>(item.value) / item.weight;
     }
 
