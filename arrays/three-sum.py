@@ -11,6 +11,11 @@ def three_sum_brute_force(nums: List[int], target: int) -> List[int]:
     """
     n = len(nums)
     
+    # Need at least 3 elements for a triplet
+    if n < 3:
+        print("Array size of at least 3 is required to find a triplet.")
+        return []
+
     # Try all possible combinations of three different indices
     for i in range(n):
         for j in range(i + 1, n):            # j starts after i to avoid duplicates
@@ -34,6 +39,11 @@ def three_sum(nums: List[int], target: int) -> List[int]:
     """
     n = len(nums)
     
+    # Need at least 3 elements for a triplet
+    if n < 3:
+        print("Array size of at least 3 is required to find a triplet.")
+        return []
+        
     # Fix the first element and solve Two Sum for the remaining elements
     for i in range(n):
         seen = {}  # Maps value to its index

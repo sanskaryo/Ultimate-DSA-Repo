@@ -13,6 +13,12 @@ public class ThreeSum {
     public static List<Integer> threeSumBruteForce(int[] nums, int target) {
         int n = nums.length;
         
+        // Need at least 3 elements
+        if (n < 3) {
+            System.out.println("Array size of at least 3 is required to find a triplet.");
+            return new ArrayList<>();
+        }
+
         // Try all possible combinations of three different indices
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {            // j starts after i to avoid duplicates
@@ -38,6 +44,12 @@ public class ThreeSum {
      */
     public static List<Integer> threeSum(int[] nums, int target) {
         int n = nums.length;
+
+        // Need at least 3 elements
+        if (n < 3) {
+            System.out.println("Array size of at least 3 is required to find a triplet.");
+            return new ArrayList<>();
+        }
         
         // Fix the first element and solve Two Sum for the remaining elements
         for (int i = 0; i < n; i++) {

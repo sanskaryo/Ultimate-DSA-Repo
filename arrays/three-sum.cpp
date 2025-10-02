@@ -14,6 +14,12 @@ using namespace std;
 vector<int> threeSumBruteForce(const vector<int>& nums, int target) {
     int n = nums.size();
     
+    // Need at least 3 elements
+    if (n < 3) {
+        cout << "Array size of at least 3 is required to find a triplet."<< "\n";
+        return {};
+    }
+
     // Try all possible combinations of three different indices
     for (int i = 0; i < n; ++i) {
         for (int j = i + 1; j < n; ++j) {            // j starts after i to avoid duplicates
@@ -40,6 +46,12 @@ vector<int> threeSumBruteForce(const vector<int>& nums, int target) {
  */
 vector<int> threeSum(const vector<int>& nums, int target) {
     int n = nums.size();
+
+        // Need at least 3 elements
+    if (n < 3) {
+        cout << "Array size of at least 3 is required to find a triplet."<< "\n";
+        return {};
+    }
 
     // Fix the first element and solve Two Sum for the remaining elements
     for (int i = 0; i < n; ++i) {
