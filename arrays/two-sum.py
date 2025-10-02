@@ -114,7 +114,7 @@ class TwoSumSolver:
             print(f"Brute Force Result: {result_brute_force}")
             
             # Verify correctness (check if the indices give correct sum)
-            def verify_result(result: List[int]) -> bool:
+            def verify_result(result: List[int], nums=nums, target=target) -> bool:
                 if len(result) != 2:
                     return False
                 return nums[result[0]] + nums[result[1]] == target

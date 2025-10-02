@@ -209,7 +209,7 @@ def main():
         print("  ✅ No duplicates found in the entire array.")
     
     # Performance comparison
-    print(f"\n=== Performance Analysis ===")
+    print("\n=== Performance Analysis ===")
     print("For an array of size n:")
     print("• Hash Set:    O(n) time, O(n) space - Best for most cases")
     print("• Sorting:     O(n log n) time, O(1) space - Good when space is limited")

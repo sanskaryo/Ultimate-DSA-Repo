@@ -171,7 +171,7 @@ def main():
             print(f"Found unique {nums_copy[fast]}: slow={slow}, array={nums_copy}")
     
     new_length = slow + 1
-    print(f"\nFinal result:")
+    print("\nFinal result:")
     print(f"New length: {new_length}")
     print("Array after removing duplicates: ", end="")
     RemoveDuplicatesSolver.print_array_with_length(nums_copy, new_length)

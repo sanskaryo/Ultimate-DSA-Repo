@@ -142,7 +142,7 @@ public class RemoveDuplicatesSortedArray {
             {1, 2, 3, 4, 5},
             {1},
             {2, 2, 2, 2},
-            {}
+            new int[]{}
         };
         
         int[] expectedLengths = {2, 5, 5, 1, 1, 0};
@@ -153,7 +153,7 @@ public class RemoveDuplicatesSortedArray {
             {1, 2, 3, 4, 5},
             {1},
             {2},
-            {}
+           new int[]{}
         };
         
         String[] descriptions = {
