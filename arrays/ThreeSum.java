@@ -15,7 +15,7 @@ public class ThreeSum {
         
         // Need at least 3 elements
         if (n < 3) {
-            System.out.println("Array size of at least 3 is required to find a triplet.");
+            // return an empty array
             return new ArrayList<>();
         }
 
@@ -47,7 +47,7 @@ public class ThreeSum {
 
         // Need at least 3 elements
         if (n < 3) {
-            System.out.println("Array size of at least 3 is required to find a triplet.");
+            // return an empty array
             return new ArrayList<>();
         }
         

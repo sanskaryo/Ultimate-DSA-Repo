@@ -16,7 +16,7 @@ vector<int> threeSumBruteForce(const vector<int>& nums, int target) {
     
     // Need at least 3 elements
     if (n < 3) {
-        cout << "Array size of at least 3 is required to find a triplet."<< "\n";
+        //  return an empty array
         return {};
     }
 
@@ -49,7 +49,7 @@ vector<int> threeSum(const vector<int>& nums, int target) {
 
         // Need at least 3 elements
     if (n < 3) {
-        cout << "Array size of at least 3 is required to find a triplet."<< "\n";
+        // return an empty array
         return {};
     }
 
