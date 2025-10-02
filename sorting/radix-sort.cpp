@@ -10,6 +10,9 @@ using namespace std;
  * Space Complexity: O(1)
  */
 int getMax(const vector<int>& arr) {
+    if (arr.empty()) {
+        return;
+    }
     return *max_element(arr.begin(), arr.end());
 }
 
