@@ -8,7 +8,7 @@ public class TwoSum {
      * Finds two numbers in an array that add up to a target value.
      *
      * This optimal solution uses a HashMap to store numbers we've seen and their indices.
-     * It iterates through the array once, achieving O(n) time complexity.
+     * It iterates through the array once, achieving O(n) time complexity and O(n) space complexity.
      *
      * @param nums The input array of integers.
      * @param target The target sum.

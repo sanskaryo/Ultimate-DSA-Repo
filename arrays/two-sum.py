@@ -3,7 +3,7 @@ def two_sum(nums: list[int], target: int) -> list[int]:
     Finds two numbers in a list that add up to a target value.
 
     This optimal solution uses a hash map to store numbers we've seen and their indices.
-    It iterates through the list once, achieving O(n) time complexity.
+    It iterates through the list once, achieving O(n) time complexity and O(n) space complexity.
     """
     # Hash map to store {number: index}
     num_map = {}

@@ -7,7 +7,7 @@
  *
  * This optimal solution uses an std::unordered_map (hash map) to store numbers
  * we've seen and their indices. It iterates through the vector once,
- * achieving O(n) time complexity.
+ * achieving O(n) time complexity and O(n) space complexity.
  *
  * @param nums The input vector of integers.
  * @param target The target sum.
