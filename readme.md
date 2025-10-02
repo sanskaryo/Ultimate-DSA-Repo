@@ -37,7 +37,7 @@ How you can help:
 3. Submit a clear, descriptive pull request
 4. Respond to code reviews, and be polite—all levels of contributors are welcome!
 
-For more info, see [CONTRIBUTING.md](./CONTRIBUTING.md).
+For more info, see [CONTRIBUTING.md](https://github.com/sanskaryo/Ultimate-DSA-Repo/blob/main/contribution.md).
 
 ---
 
