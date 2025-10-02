@@ -32,7 +32,7 @@ How you can help:
 
 ## 📝 How To Contribute
 
-1. **Fork and clone the repo**
+1. **Star ,Fork and clone the repo**
 2. Make your changes in the correct folder (see CONTRIBUTING.md for details)
 3. Submit a clear, descriptive pull request
 4. Respond to code reviews, and be polite—all levels of contributors are welcome!
