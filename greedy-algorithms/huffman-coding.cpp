@@ -8,11 +8,12 @@
 struct MinHeapNode {
     char data;
     unsigned freq;
+    bool isLeaf;
     // Use std::shared_ptr for automatic memory management
     std::shared_ptr<MinHeapNode> left, right;
 
-    MinHeapNode(char data, unsigned freq)
-        : data(data), freq(freq), left(nullptr), right(nullptr) {}
+   MinHeapNode(char data, unsigned freq, bool isLeaf = true)
+        : data(data), freq(freq), isLeaf(isLeaf), left(nullptr), right(nullptr) {}
 };
 
 // Comparison structure for the priority queue (min-heap)
@@ -30,7 +31,7 @@ void printCodes(const std::shared_ptr<MinHeapNode>& root, std::string str) {
     }
 
     // A '$' is used as a special value for internal nodes
-    if (root->data != '$') {
+    if (root->isLeaf) {
         std::cout << root->data << ": " << str << "\n";
     }
 
@@ -45,6 +46,13 @@ void huffmanCoding(const std::vector<char>& data, const std::vector<int>& freq) 
         std::cerr << "Error: Input vectors are empty or have mismatched sizes.\n";
         return;
     }
+    // Check for reserved character
+   for (char c : data) {
+       if (c == '$') {
+            std::cerr << "Error: Input data cannot contain the '$' character.\n";
+          return;
+      }
+   }
 
     // --- 2. Build the Min-Heap ---
     // The priority queue now stores shared pointers to nodes
@@ -65,7 +73,7 @@ void huffmanCoding(const std::vector<char>& data, const std::vector<int>& freq) 
 
         // Create a new internal node.
         // Its frequency is the sum of the two nodes' frequencies.
-        auto top = std::make_shared<MinHeapNode>('$', left->freq + right->freq);
+        auto top = std::make_shared<MinHeapNode>('\0', left->freq + right->freq, false);
         top->left = left;
         top->right = right;
         minHeap.push(top);
