@@ -1,0 +1,388 @@
+# DSA Learning Repository - .gitignore
+
+# ========================
+# COMPILED & BINARY FILES
+# ========================
+
+# Java compiled files
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# C/C++ compiled files
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+
+# Python compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Node.js (if adding JavaScript solutions)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tgz
+*.tar.gz
+
+# Rust compiled files
+target/
+Cargo.lock
+
+# Go compiled files
+*.exe~
+*.test
+*.prof
+
+# ========================
+# IDE & EDITOR FILES
+# ========================
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ IDEA / Android Studio
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.classpath
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ========================
+# OPERATING SYSTEM FILES
+# ========================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ========================
+# DEVELOPMENT TOOLS
+# ========================
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+gradle-app.setting
+!gradle-wrapper.jar
+
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# Make
+*.d
+*.o
+*.a
+*.so
+
+# ========================
+# TESTING FRAMEWORKS
+# ========================
+
+# JUnit
+TEST-*.xml
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jest (JavaScript testing)
+coverage/
+*.lcov
+
+# ========================
+# DOCUMENTATION TOOLS
+# ========================
+
+# Sphinx documentation
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# Doxygen
+html/
+latex/
+
+# ========================
+# PACKAGE MANAGERS
+# ========================
+
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Conda
+.conda/
+
+# Poetry
+poetry.lock
+
+# ========================
+# TEMPORARY & CACHE FILES
+# ========================
+
+# General temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Lock files (except essential ones)
+*.lock
+!package-lock.json
+!yarn.lock
+!Pipfile.lock
+
+# ========================
+# PROJECT SPECIFIC
+# ========================
+
+# Test input/output files
+input.txt
+output.txt
+test_input.txt
+test_output.txt
+*.in
+*.out
+
+# Personal notes (but keep template notes)
+personal_notes/
+my_notes/
+private/
+
+# Solution variants (keep only main solutions)
+*_v2.*
+*_version2.*
+*_old.*
+*_backup.*
+
+# Performance testing files
+*.perf
+performance_test/
+benchmark_results/
+
+# Large datasets
+*.csv
+*.json
+data/
+datasets/
+large_inputs/
+
+# Generated documentation (keep source)
+generated_docs/
+auto_generated/
+
+# Website build files (if creating documentation site)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Analytics and logs
+analytics/
+logs/
+*.log
+
+# ========================
+# SECURITY & SENSITIVE
+# ========================
+
+# API keys and secrets
+.env
+.env.local
+.env.production
+secrets.txt
+api_keys.txt
+config.ini
+credentials.json
+
+# SSH keys
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# ========================
+# MISCELLANEOUS
+# ========================
+
+# Compressed files (unless needed for examples)
+*.7z
+*.gz
+*.bz2
+*.xz
+
+# Media files (unless they are educational examples)
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mp3
+*.wav
+
+# Archives
+*.zip
+*.rar
+*.tar
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# ========================
+# KEEP THESE IMPORTANT FILES
+# ========================
+# The following files should NOT be ignored:
+# - README.md files
+# - CONTRIBUTING.md
+# - CODE_OF_CONDUCT.md
+# - LICENSE files
+# - Documentation markdown files
+# - Example input/output for educational purposes
+# - Setup scripts and configuration templates
+comprehensive-github-issues.md
+create-github-issues.bat
+github-issues-templates.md
+issue-creation-guide.md
+create-github-issues.sh
