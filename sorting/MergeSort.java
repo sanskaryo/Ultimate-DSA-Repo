@@ -16,7 +16,7 @@ public class MergeSort {
 
     public static void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
-            int mid = (left + right) / 2;
+            int mid = left + (right - left) / 2;
 
             // Sort first and second halves
             mergeSort(arr, left, mid);

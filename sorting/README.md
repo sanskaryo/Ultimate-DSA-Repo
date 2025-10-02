@@ -23,10 +23,11 @@ Sorting algorithms are fundamental in computer science and are used to arrange e
 
 ## Time & Space Complexities of Merge Sort
 | Operation	    | Complexity   |
-| Best Case	    |   O(n log n) |  
-| Average Case	|   O(n log n) |
-| Worst Case	|   O(n log n) |
-| Space	        |   O(n)       |
+|---------------|--------------|
+| Best Case	    | O(n log n)   |  
+| Average Case	| O(n log n)   |
+| Worst Case	| O(n log n)   |
+| Space	        | O(n)         |  
 
 ## Files in this directory
 
