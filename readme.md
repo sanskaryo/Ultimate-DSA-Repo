@@ -352,46 +352,6 @@ GirlScript Summer of Code is a 3-month long open source program conducted by Gir
 - **Encode** - Programming challenges
 - **Grasshopper** - JavaScript fundamentals
 
-## 🏢 **Company-Wise Questions**
-
-### 🔍 **FAANG Companies**
-
-#### **Google**
-- Array and string manipulation
-- Graph algorithms and tree traversals
-- System design basics
-- Mathematical and statistical problems
-
-#### **Amazon**
-- Trees and graphs (heavy focus)
-- Dynamic programming
-- Object-oriented design
-- Leadership principles questions
-
-#### **Apple**
-- Core data structures
-- Algorithm optimization
-- Memory management
-- iOS-specific challenges
-
-#### **Netflix**
-- Recommendation algorithms
-- Scale and performance optimization
-- Data processing pipelines
-- Distributed systems concepts
-
-#### **Meta (Facebook)**
-- Graph problems (social network context)
-- String algorithms
-- Hash tables and maps
-- Behavioral questions
-
-### 🚀 **Other Top Companies**
-- **Microsoft** - Trees, graphs, and dynamic programming
-- **Adobe** - Image processing and algorithms
-- **Uber** - Location-based algorithms and optimization
-- **Airbnb** - Search and recommendation systems
-- **Spotify** - Music recommendation and data structures
 
 ## 📊 **Difficulty Levels**
 
