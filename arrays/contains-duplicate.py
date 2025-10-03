@@ -67,13 +67,12 @@ class ContainsDuplicateSolver:
         """
         if len(nums) <= 1:
             return False
-        
-        # Sort the array
-        nums_sorted = sorted(nums)
-        
+        # Sort the array in-place
+        nums.sort()
+
         # Check adjacent elements
-        for i in range(1, len(nums_sorted)):
-            if nums_sorted[i] == nums_sorted[i - 1]:
+        for i in range(1, len(nums)):
+            if nums[i] == nums[i - 1]:
                 return True
         
         return False

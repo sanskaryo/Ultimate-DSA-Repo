@@ -85,7 +85,7 @@ public class StockTradingJava {
      */
     public static int[] findBuySellDays(int[] prices) {
         if (prices == null || prices.length < 2) {
-            return new int[]{-1, -1};  // Invalid result
+            return new int[]{-1, -1, 0};  // {buyDay, sellDay, maxProfit}
         }
         
         int minPriceSoFar = prices[0];
@@ -163,11 +163,13 @@ public class StockTradingJava {
             System.out.println("Optimized Result: " + resultOptimized);
             System.out.println("Brute Force Result: " + resultBruteForce);
             
-            if (buySellInfo[2] > 0) {  // If profit exists
+            if (buySellInfo.length >= 3 && buySellInfo[2] > 0) {  // If profit exists
                 System.out.println("Buy on day " + buySellInfo[0] + 
                                  " (price: " + prices[buySellInfo[0]] + 
                                  "), sell on day " + buySellInfo[1] + 
                                  " (price: " + prices[buySellInfo[1]] + ")");
+            } else if (buySellInfo.length >= 3 && buySellInfo[2] == 0) {
+                System.out.println("No profitable trade possible");
             }
             
             // Verify correctness
