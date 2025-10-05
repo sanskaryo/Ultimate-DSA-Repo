@@ -17,10 +17,10 @@
 
 class StringReversal {
 public:
-    /**
-     * Two-pointer approach - Most efficient
-     * Time: O(n), Space: O(1)
-     */
+ /**
+ * Two-pointer approach - Most efficient
+ * Time: O(n), Space: O(1)
+ */
     static std::string reverseTwoPointer(std::string str) {
         int left = 0;
         int right = str.length() - 1;
