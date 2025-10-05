@@ -116,6 +116,7 @@ if __name__ == "__main__":
 ---
 
 ## 🔄 How to Contribute
+## Star The repo
 
 ### 🍴 Step 1: Fork & Clone
 ```bash
