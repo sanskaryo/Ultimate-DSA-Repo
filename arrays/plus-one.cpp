@@ -47,7 +47,7 @@ public:
      *   Input: digits = [9, 9, 9]
      *   Output: [1, 0, 0, 0]
      */
-    static vector<int> plusOneOptimized(vector<int>& digits) {
+    static vector<int> plusOneOptimized(vector<int> digits) {
         int n = digits.size();
         
         for (int i = n - 1; i >= 0; i--) {
