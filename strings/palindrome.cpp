@@ -9,7 +9,7 @@
 using namespace std;
 
 bool isPalindrome(const string& str) {
-    int left = 0, right = str.length() - 1; // intial variable setup
+    int left = 0, right = str.length() - 1; // initial variable setup
 
     while (left < right) {
         // Skip spaces from the left
@@ -43,7 +43,7 @@ int main() {
     };
 
     for (const auto& test : tests) {
-        cout << (isPalindrome(test) ? "true" : "false") << endl; // ternery condition check for output in boolean exp
+        cout << (isPalindrome(test) ? "true" : "false") << endl; // ternary condition check for output in boolean exp
     }
     return 0;
 }

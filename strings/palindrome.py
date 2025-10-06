@@ -37,5 +37,6 @@ tests = [
 ]
 
 # Output
-for test in tests:
-    print("true" if is_palindrome(test) else "false")  # ternary condition check for output in boolean exp
+if __name__ == "__main__":
+    for test in tests:
+        print("true" if is_palindrome(test) else "false")  # ternary condition check for output in boolean exp
