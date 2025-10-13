@@ -8,7 +8,7 @@
  * - p^2 for precomputing small binomial coefficients
  * - log n for the number of digits in base p
  * 
- * Author: GitHub Copilot
+ * Author: Abhi
  * Date: October 2, 2025
  */
 
