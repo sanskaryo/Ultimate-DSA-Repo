@@ -70,6 +70,6 @@ if __name__ == "__main__":
     # Test case 5: With duplicates
     nums1 = [1, 1, 2, 0, 0, 0]
     m = 3
-    nums2 = [1, 2, 3]
+    nums2 = [1, 2, 3] 
     n = 3
     print(merge_sorted_array(nums1, m, nums2, n))  # [1, 1, 1, 2, 2, 3]
